@@ -1,5 +1,7 @@
-// Nav.jsx — sticky top navigation for marketing site
-function Nav() {
+import React from 'react';
+import logoSrc from './assets/logo/wordmark.svg';
+
+export default function Nav() {
   const [scrolled, setScrolled] = React.useState(false);
   React.useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -10,7 +12,7 @@ function Nav() {
     <nav className={`twg-nav ${scrolled ? 'scrolled' : ''}`}>
       <div className="twg-nav-inner">
         <a href="#" className="twg-nav-brand">
-          <img src="../../assets/logo/wordmark.svg" alt="The Whole Game" height="28" />
+          <img src={logoSrc} alt="The Whole Game" height="28" />
         </a>
         <div className="twg-nav-links">
           <a href="#how-it-works">Product</a>
@@ -25,4 +27,3 @@ function Nav() {
     </nav>
   );
 }
-window.Nav = Nav;

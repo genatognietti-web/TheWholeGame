@@ -1,5 +1,6 @@
-// Features.jsx — clean 3-step "how it works"
-function Features() {
+import React from 'react';
+
+export default function Features() {
   const steps = [
     {
       num: '01',
@@ -45,14 +46,3 @@ function Features() {
     </section>
   );
 }
-
-function Icon({ name, size = 22 }) {
-  const [svg, setSvg] = React.useState('');
-  React.useEffect(() => {
-    fetch(`../../assets/icons/${name}.svg`).then(r => r.text()).then(setSvg);
-  }, [name]);
-  return <span className="twg-icon" style={{width: size, height: size}} dangerouslySetInnerHTML={{__html: svg}} />;
-}
-
-window.Features = Features;
-window.Icon = Icon;

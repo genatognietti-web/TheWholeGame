@@ -1,5 +1,6 @@
-// Quote.jsx — placeholder testimonial (NOT a fabricated real quote)
-function Quote() {
+import React from 'react';
+
+export default function Quote() {
   return (
     <section className="twg-section twg-section-quote" id="stories">
       <div className="twg-quote-photo" style={{
@@ -30,4 +31,3 @@ function Quote() {
     </section>
   );
 }
-window.Quote = Quote;

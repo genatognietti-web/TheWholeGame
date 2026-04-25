@@ -1,10 +1,12 @@
-// Footer.jsx
-function Footer() {
+import React from 'react';
+import logoSrc from './assets/logo/wordmark-ondark.svg';
+
+export default function Footer() {
   return (
     <footer className="twg-footer">
       <div className="twg-container twg-footer-inner">
         <div className="twg-footer-brand">
-          <img src="../../assets/logo/wordmark.svg" alt="The Whole Game" height="28" />
+          <img src={logoSrc} alt="The Whole Game" height="28" />
           <p>The operations layer for youth sports. Less logistics. More game.</p>
         </div>
         <div className="twg-footer-cols">
@@ -38,4 +40,3 @@ function Footer() {
     </footer>
   );
 }
-window.Footer = Footer;

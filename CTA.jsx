@@ -1,5 +1,6 @@
-// CTA.jsx — bottom CTA band
-function CTA() {
+import React from 'react';
+
+export default function CTA() {
   return (
     <section className="twg-section twg-section-cta">
       <div className="twg-container twg-cta-inner">
@@ -17,4 +18,3 @@ function CTA() {
     </section>
   );
 }
-window.CTA = CTA;

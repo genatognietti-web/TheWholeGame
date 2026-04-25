@@ -1,16 +1,57 @@
+import React from 'react';
+
 function scrollToWaitlist(e) {
   e.preventDefault();
   const el = document.getElementById('hero-waitlist');
   if (el) el.scrollIntoView({ block: 'start' });
-  // flash the waitlist input
   setTimeout(() => {
     const input = document.querySelector('.twg-waitlist input');
     if (input) { input.focus(); input.classList.add('twg-waitlist-pulse'); setTimeout(() => input.classList.remove('twg-waitlist-pulse'), 1000); }
   }, 400);
 }
 
-// Pricing.jsx — 3 bundle tiles, buy buttons → waitlist while pre-launch
-function Pricing() {
+function PricingCard({ num, name, badge, price, desc, body, featured, bestFor, items, cta }) {
+  const [open, setOpen] = React.useState(false);
+  return (
+    <article className={`twg-pricing-card ${featured ? 'featured' : ''}`}>
+      <div className="twg-pricing-head">
+        <div style={{display:'flex', flexDirection:'column', gap:4}}>
+          <span style={{fontFamily:'var(--font-mono)', fontSize:10, color: featured ? 'var(--blush-400)' : 'var(--fg-tertiary)', letterSpacing:'0.1em'}}>{num}</span>
+          <h3>{name}</h3>
+        </div>
+        {badge && <span className="twg-pill twg-pill-accent">{badge}</span>}
+      </div>
+      <div className="twg-pricing-price">
+        <span className="amt">{price}</span>
+        <span className="unit">one-time · 9 docs</span>
+      </div>
+      <p style={{fontSize:14.5, fontWeight:500, color:'var(--ink-800)', lineHeight:1.4, margin:'0 0 8px'}}>{desc}</p>
+      <p className="twg-pricing-desc">{body}</p>
+      <p style={{fontSize:12.5, color:'var(--fg-tertiary)', margin:'0 0 14px', lineHeight:1.45}}>
+        <strong style={{color:'var(--ink-700)', fontWeight:500}}>Best for:</strong> {bestFor}
+      </p>
+      <a href="#hero-waitlist" onClick={scrollToWaitlist} className={`twg-btn ${featured ? 'twg-btn-primary' : 'twg-btn-secondary'} twg-btn-block`}>{cta}</a>
+      <div style={{borderTop:'1px solid var(--border-subtle)', marginTop:16, paddingTop:14}}>
+        <button className="twg-bundle-toggle" onClick={() => setOpen(o => !o)}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" width="13" height="13" style={{transform: open ? 'rotate(180deg)' : 'none', transition:'transform .18s'}}><path d="M6 9l6 6 6-6"/></svg>
+          {open ? 'Hide' : 'See all'} 9 documents
+        </button>
+        {open && (
+          <ul className="twg-pricing-features" style={{marginTop:12}}>
+            {items.map((f, i) => (
+              <li key={i}>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                {f}
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </article>
+  );
+}
+
+export default function Pricing() {
   const tiers = [
     {
       num: '01',
@@ -94,46 +135,3 @@ function Pricing() {
     </section>
   );
 }
-
-function PricingCard({ num, name, badge, price, desc, body, featured, bestFor, items, cta }) {
-  const [open, setOpen] = React.useState(false);
-  return (
-    <article className={`twg-pricing-card ${featured ? 'featured' : ''}`}>
-      <div className="twg-pricing-head">
-        <div style={{display:'flex', flexDirection:'column', gap:4}}>
-          <span style={{fontFamily:'var(--font-mono)', fontSize:10, color: featured ? 'var(--blush-400)' : 'var(--fg-tertiary)', letterSpacing:'0.1em'}}>{num}</span>
-          <h3>{name}</h3>
-        </div>
-        {badge && <span className="twg-pill twg-pill-accent">{badge}</span>}
-      </div>
-      <div className="twg-pricing-price">
-        <span className="amt">{price}</span>
-        <span className="unit">one-time · 9 docs</span>
-      </div>
-      <p style={{fontSize:14.5, fontWeight:500, color:'var(--ink-800)', lineHeight:1.4, margin:'0 0 8px'}}>{desc}</p>
-      <p className="twg-pricing-desc">{body}</p>
-      <p style={{fontSize:12.5, color:'var(--fg-tertiary)', margin:'0 0 14px', lineHeight:1.45}}>
-        <strong style={{color:'var(--ink-700)', fontWeight:500}}>Best for:</strong> {bestFor}
-      </p>
-      <a href="#hero-waitlist" onClick={scrollToWaitlist} className={`twg-btn ${featured ? 'twg-btn-primary' : 'twg-btn-secondary'} twg-btn-block`}>{cta}</a>
-      <div style={{borderTop:'1px solid var(--border-subtle)', marginTop:16, paddingTop:14}}>
-        <button className="twg-bundle-toggle" onClick={() => setOpen(o => !o)}>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" width="13" height="13" style={{transform: open ? 'rotate(180deg)' : 'none', transition:'transform .18s'}}><path d="M6 9l6 6 6-6"/></svg>
-          {open ? 'Hide' : 'See all'} 9 documents
-        </button>
-        {open && (
-          <ul className="twg-pricing-features" style={{marginTop:12}}>
-            {items.map((f, i) => (
-              <li key={i}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-                {f}
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-    </article>
-  );
-}
-
-window.Pricing = Pricing;
