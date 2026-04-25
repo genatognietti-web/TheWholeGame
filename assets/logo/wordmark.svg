@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 48" fill="none" role="img" aria-label="The Whole Game">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&amp;display=swap');
+      .wm-the { font: 300 13px/1 'Newsreader', Georgia, serif; fill: #6a4238; letter-spacing: 0.12em; text-transform: uppercase; }
+      .wm-main { font: 400 32px/1 'Newsreader', Georgia, serif; fill: #2e1915; letter-spacing: -0.02em; }
+    </style>
+  </defs>
+  <text class="wm-the" x="2" y="15">THE</text>
+  <text class="wm-main" x="0" y="46">Whole Game</text>
+</svg>

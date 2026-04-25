@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none" role="img" aria-label="The Whole Game mark">
+  <!-- Outer ring -->
+  <circle cx="20" cy="20" r="18" stroke="#d7866c" stroke-width="1.5" fill="none"/>
+  <!-- W letterform — two V shapes forming a W -->
+  <polyline points="8,13 12,27 16,19 20,27 24,19 28,27 32,13"
+    stroke="#2e1915" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>
