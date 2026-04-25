@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { background: var(--bg-canvas); margin: 0; }
+  .card { padding: 24px; font-family: var(--font-sans); }
+  .group { margin-bottom: 14px; }
+  .title { font-weight: 600; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-secondary); margin: 0 0 8px; }
+  .row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+  .sw { aspect-ratio: 2.6/1; border-radius: var(--radius-sm); padding: 6px 10px; display: flex; flex-direction: column; justify-content: space-between; font-size: 10px; font-weight: 500; border: 1px solid rgba(45,30,25,0.04); }
+  .n { opacity: 0.65; font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .hex { font-family: var(--font-mono); font-size: 9.5px; }
+</style></head>
+<body>
+<div class="card">
+  <div class="group">
+    <div class="title">Sage · success</div>
+    <div class="row">
+      <div class="sw" style="background:#eef2ea;color:#221813"><span class="n">50</span><span class="hex">#eef2ea</span></div>
+      <div class="sw" style="background:#dbe4d3;color:#221813"><span class="n">100</span><span class="hex">#dbe4d3</span></div>
+      <div class="sw" style="background:#9fb78e;color:#221813"><span class="n">300</span><span class="hex">#9fb78e</span></div>
+      <div class="sw" style="background:#6b8758;color:#fbf7f2"><span class="n">500</span><span class="hex">#6b8758</span></div>
+    </div>
+  </div>
+  <div class="group">
+    <div class="title">Amber · warning</div>
+    <div class="row">
+      <div class="sw" style="background:#fbf1dc;color:#221813"><span class="n">50</span><span class="hex">#fbf1dc</span></div>
+      <div class="sw" style="background:#f5e1b3;color:#221813"><span class="n">100</span><span class="hex">#f5e1b3</span></div>
+      <div class="sw" style="background:#e5ba6a;color:#221813"><span class="n">300</span><span class="hex">#e5ba6a</span></div>
+      <div class="sw" style="background:#c79238;color:#fbf7f2"><span class="n">500</span><span class="hex">#c79238</span></div>
+    </div>
+  </div>
+  <div class="group">
+    <div class="title">Rust · error · destructive</div>
+    <div class="row">
+      <div class="sw" style="background:#f9e8e2;color:#221813"><span class="n">50</span><span class="hex">#f9e8e2</span></div>
+      <div class="sw" style="background:#efc5b7;color:#221813"><span class="n">100</span><span class="hex">#efc5b7</span></div>
+      <div class="sw" style="background:#d38068;color:#221813"><span class="n">300</span><span class="hex">#d38068</span></div>
+      <div class="sw" style="background:#a84f35;color:#fbf7f2"><span class="n">500</span><span class="hex">#a84f35</span></div>
+    </div>
+  </div>
+</div>
+</body></html>
