@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { background: var(--bg-canvas); margin: 0; font-family: var(--font-sans); color: var(--ink-900); }
+  .card { padding: 28px 32px; display:grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .block { display:flex; flex-direction:column; gap: 8px; }
+  .tag { font-family: var(--font-sans); font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blush-500); }
+  .big { font-family: var(--font-mono); font-size: 44px; font-weight: 500; letter-spacing: -0.03em; line-height: 1; color: var(--ink-900); font-variant-numeric: tabular-nums; }
+  .big .sub { font-family: var(--font-sans); font-size: 12px; color: var(--fg-tertiary); letter-spacing: 0; font-weight: 400; margin-left: 8px; }
+  .stack { display:flex; flex-direction:column; gap:6px; font-family: var(--font-mono); }
+  .stack .sz { font-size: 10px; color: var(--fg-tertiary); font-family: var(--font-mono); letter-spacing: 0.04em; }
+  .receipt { background: var(--ivory-100); border: 1px dashed var(--border-default); border-radius: 10px; padding: 14px 16px; font-family: var(--font-mono); font-size: 12.5px; color: var(--ink-800); line-height: 1.7; }
+  .receipt .row { display:flex; justify-content:space-between; }
+  .receipt .row b { font-weight: 500; }
+  .receipt .total { border-top: 1px solid var(--border-default); margin-top: 6px; padding-top: 6px; font-weight: 500; color: var(--ink-900); }
+  .code { background: var(--ink-900); color: var(--ivory-100); border-radius: 10px; padding: 14px 16px; font-family: var(--font-mono); font-size: 12.5px; line-height: 1.65; }
+  .code .k { color: var(--blush-300); }
+  .code .s { color: var(--sage-300); }
+  .code .c { color: var(--ink-300); font-style: italic; }
+  .kbd { display:inline-block; font-family: var(--font-mono); font-size: 11px; padding: 2px 7px; border-radius: 4px; background: #fff; border: 1px solid var(--border-default); box-shadow: 0 1px 0 var(--border-default); color: var(--ink-800); }
+</style></head>
+<body>
+<div class="card">
+  <div class="block">
+    <span class="tag">Tabular numerals</span>
+    <div class="big">$12,480<span class="sub">registrations · season-to-date</span></div>
+    <div class="stack">
+      <span class="sz">14px · 500</span>
+      <span style="font-size:14px;font-weight:500">INV-2026-0412 &nbsp;·&nbsp; due Apr 29</span>
+      <span class="sz" style="margin-top:6px">12px · 400</span>
+      <span style="font-size:12px;color:var(--fg-secondary)">registration.status = <span style="color:var(--sage-600)">'confirmed'</span></span>
+    </div>
+  </div>
+  <div class="block">
+    <span class="tag">Receipt · tabular align</span>
+    <div class="receipt">
+      <div class="row"><span>U10 registration</span><b>$180.00</b></div>
+      <div class="row"><span>Uniform kit</span><b>$60.00</b></div>
+      <div class="row"><span>Scholarship credit</span><b style="color:var(--sage-600)">−$60.00</b></div>
+      <div class="row total"><span>Total</span><b>$180.00</b></div>
+    </div>
+    <span class="tag" style="margin-top:10px">Keys + code</span>
+    <div style="display:flex;gap:6px;align-items:center;font-size:12px;color:var(--fg-secondary)">Quick jump <span class="kbd">⌘</span><span class="kbd">K</span></div>
+    <div class="code"><span class="c">// draft stays in your voice</span><br/><span class="k">await</span> twg.drafts.send(<span class="s">'season-opener'</span>)</div>
+  </div>
+</div>
+</body></html>

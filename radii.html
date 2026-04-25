@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { background: var(--bg-canvas); margin: 0; font-family: var(--font-sans); }
+  .card { padding: 28px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+  .cell { display:flex; flex-direction:column; align-items:center; gap: 10px; }
+  .sq { width: 72px; height: 56px; background: var(--ivory-100); border: 1px solid var(--border-default); }
+  .lbl { font-family: var(--font-mono); font-size: 10px; color: var(--fg-tertiary); text-align:center; line-height:1.4; }
+  .lbl b { color: var(--fg-body); font-weight: 500; }
+</style></head>
+<body>
+<div class="card">
+  <div class="cell"><div class="sq" style="border-radius:0"></div><div class="lbl"><b>none</b><br>0</div></div>
+  <div class="cell"><div class="sq" style="border-radius:4px"></div><div class="lbl"><b>xs</b><br>4px</div></div>
+  <div class="cell"><div class="sq" style="border-radius:6px"></div><div class="lbl"><b>sm</b><br>6px · buttons</div></div>
+  <div class="cell"><div class="sq" style="border-radius:12px"></div><div class="lbl"><b>md</b><br>12px · cards</div></div>
+  <div class="cell"><div class="sq" style="border-radius:20px"></div><div class="lbl"><b>lg</b><br>20px · modals</div></div>
+  <div class="cell"><div class="sq" style="border-radius:28px"></div><div class="lbl"><b>xl</b><br>28px · hero</div></div>
+  <div class="cell"><div class="sq" style="border-radius:9999px;width:56px;height:56px"></div><div class="lbl"><b>full</b><br>pills · avatars</div></div>
+</div>
+</body></html>

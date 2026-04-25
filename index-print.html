@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Whole Game — Marketing Site</title>
+<link rel="stylesheet" href="../../colors_and_type.css">
+<link rel="stylesheet" href="kit.css">
+<style>
+  /* ── Print overrides ──────────────────────────────── */
+  @page { size: letter portrait; margin: 0; }
+
+  @media print {
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+    /* Strip interactive chrome */
+    .twg-nav, .twg-waitlist, .twg-waitlist-confirmed,
+    .twg-hero-cta, .twg-bundle-toggle, .twg-pricing-features,
+    .twg-step-arrow { display: none !important; }
+
+    /* Kill sticky nav height */
+    body { padding-top: 0 !important; }
+
+    /* Each major section = new page */
+    .twg-hero         { break-before: page; break-inside: avoid; }
+    .twg-section      { break-before: page; break-inside: avoid; }
+    .twg-section-muted { break-before: page; break-inside: avoid; }
+    .twg-section-cta  { break-before: page; break-inside: avoid; }
+    .twg-footer       { break-before: page; break-inside: avoid; }
+
+    /* Avoid breaking cards mid-card */
+    .twg-bundle-item,
+    .twg-step-card,
+    .twg-pricing-card,
+    .twg-full-stack   { break-inside: avoid; }
+
+    /* Remove overflow hidden so nothing clips */
+    .twg-hero, section, .twg-hero-photos { overflow: visible !important; }
+
+    /* Remove backdrop-filter (not supported in print) */
+    .twg-nav { display: none !important; }
+
+    /* Flatten hero trust line */
+    .twg-hero-trust { margin-top: 12px; }
+
+    /* Expand hero padding */
+    .twg-hero-inner { padding-top: 32px; padding-bottom: 32px; }
+
+    /* Make photo strip shorter in print */
+    .twg-hero-photo { height: 120px !important; }
+
+    /* Full width pricing cards */
+    .twg-pricing-grid { grid-template-columns: 1fr 1fr 1fr !important; gap: 12px !important; }
+
+    /* Show all documents in pricing cards */
+    .twg-pricing-features { display: flex !important; }
+
+    /* Full stack block — keep on one page */
+    .twg-full-stack { margin-top: 16px; }
+  }
+
+  /* Screen: add a small print button for preview */
+  @media screen {
+    .print-hint {
+      position: fixed; bottom: 24px; right: 24px; z-index: 9999;
+      background: var(--ink-900); color: var(--ivory-50);
+      font: 500 13px/1 var(--font-sans); padding: 10px 16px;
+      border-radius: 8px; cursor: pointer; border: none;
+      box-shadow: var(--shadow-md); display: flex; align-items: center; gap: 8px;
+    }
+  }
+  @media print { .print-hint { display: none; } }
+</style>
+</head>
+<body>
+<button class="print-hint" onclick="window.print()">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+  Save as PDF
+</button>
+
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="Nav.jsx"></script>
+<script type="text/babel" src="Hero.jsx"></script>
+<script type="text/babel" src="Features.jsx"></script>
+<script type="text/babel" src="Pricing.jsx"></script>
+<script type="text/babel" src="CTA.jsx"></script>
+<script type="text/babel" src="Footer.jsx"></script>
+
+<script type="text/babel">
+  function App() {
+    return (
+      <>
+        <Nav />
+        <Hero />
+        <Features />
+        <Pricing />
+        <CTA />
+        <Footer />
+      </>
+    );
+  }
+  ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+
+  // Auto-print after everything loads
+  document.fonts.ready.then(() => {
+    setTimeout(() => window.print(), 500);
+  });
+</script>
+</body>
+</html>

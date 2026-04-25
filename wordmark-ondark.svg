@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 72" width="360" height="72">
+  <g transform="translate(8, 12)">
+    <circle cx="24" cy="24" r="22" fill="none" stroke="#e4a590" stroke-width="1.5"></circle>
+    <path d="M 10 24 A 14 14 0 0 1 38 24" fill="none" stroke="#fbf7f2" stroke-width="1.5"></path>
+    <circle cx="24" cy="24" r="2.5" fill="#e4a590"></circle>
+  </g>
+  <text x="72" y="34" font-family="Newsreader, Georgia, serif" font-weight="500" font-size="22" fill="#fbf7f2" letter-spacing="-0.01em">The Whole Game</text>
+  <text x="72" y="54" font-family="Geist, ui-sans-serif, sans-serif" font-size="10" font-weight="500" fill="#dbc8b0" letter-spacing="0.18em">YOUTH SPORTS OPS</text>
+</svg>
