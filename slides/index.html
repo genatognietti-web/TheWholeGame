@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Whole Game — Sample slides</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="slides.css">
+</head>
+<body style="background:#000;margin:0">
+<deck-stage width="1920" height="1080">
+  <section id="s1"></section>
+  <section id="s2"></section>
+  <section id="s3"></section>
+  <section id="s4"></section>
+  <section id="s5"></section>
+  <section id="s6"></section>
+</deck-stage>
+
+<script src="deck-stage.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="TitleSlide.jsx"></script>
+<script type="text/babel" src="SectionSlide.jsx"></script>
+<script type="text/babel" src="QuoteSlide.jsx"></script>
+<script type="text/babel" src="StatSlide.jsx"></script>
+<script type="text/babel" src="ComparisonSlide.jsx"></script>
+<script type="text/babel" src="CloseSlide.jsx"></script>
+<script type="text/babel">
+ReactDOM.createRoot(document.getElementById('s1')).render(<TitleSlide/>);
+ReactDOM.createRoot(document.getElementById('s2')).render(<SectionSlide/>);
+ReactDOM.createRoot(document.getElementById('s3')).render(<QuoteSlide/>);
+ReactDOM.createRoot(document.getElementById('s4')).render(<StatSlide/>);
+ReactDOM.createRoot(document.getElementById('s5')).render(<ComparisonSlide/>);
+ReactDOM.createRoot(document.getElementById('s6')).render(<CloseSlide/>);
+</script>
+</body>
+</html>

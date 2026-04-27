@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Whole Game — My account</title>
+<link rel="stylesheet" href="../../colors_and_type.css">
+<style>
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; min-height: 100vh; font-family: var(--font-sans); background: var(--ivory-100); color: var(--fg-body); }
+
+/* Top nav */
+.dash-nav {
+  background: #fff;
+  border-bottom: 1px solid var(--border-subtle);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  gap: 24px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.dash-nav-brand { display: flex; align-items: center; flex-shrink: 0; }
+.dash-nav-spacer { flex: 1; }
+.dash-nav-links { display: flex; align-items: center; gap: 6px; }
+.dash-nav-link {
+  font-size: 13.5px; font-weight: 500; color: var(--fg-secondary);
+  text-decoration: none; padding: 6px 12px; border-radius: 6px;
+  transition: background .12s, color .12s;
+}
+.dash-nav-link:hover { background: var(--ivory-100); color: var(--ink-900); }
+.dash-nav-link.active { color: var(--ink-900); background: var(--ivory-100); }
+.dash-nav-avatar {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--blush-400); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 600; cursor: pointer;
+  margin-left: 8px;
+}
+
+/* Page shell */
+.dash-page { max-width: 860px; margin: 0 auto; padding: 48px 40px 80px; }
+
+.dash-greeting { margin-bottom: 40px; }
+.dash-greeting h1 {
+  font-family: var(--font-display);
+  font-size: 36px; font-weight: 400; letter-spacing: -0.02em;
+  color: var(--ink-900); margin: 0 0 6px; line-height: 1.15;
+}
+.dash-greeting h1 em { font-style: italic; color: var(--blush-500); }
+.dash-greeting p { font-size: 15px; color: var(--fg-secondary); margin: 0; }
+
+/* Section header */
+.dash-section-head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  margin-bottom: 14px;
+}
+.dash-section-title {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--fg-tertiary);
+}
+
+/* Bundle card */
+.dash-bundle {
+  background: #fff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.dash-bundle-head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: center;
+  padding: 22px 24px;
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--ivory-50);
+}
+.dash-bundle-label { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blush-500); margin-bottom: 4px; }
+.dash-bundle-name { font-family: var(--font-display); font-size: 22px; font-weight: 500; letter-spacing: -0.015em; color: var(--ink-900); line-height: 1.2; }
+.dash-bundle-meta { font-size: 12px; color: var(--fg-tertiary); margin-top: 4px; font-family: var(--font-mono); }
+.dash-bundle-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12px; font-weight: 500;
+  background: var(--sage-50); color: var(--sage-600);
+  border: 1px solid var(--sage-100);
+  padding: 5px 12px; border-radius: 999px;
+}
+.dash-bundle-badge svg { width: 12px; height: 12px; stroke-width: 2; }
+
+.dash-bundle-body { padding: 20px 24px; }
+
+/* Document list */
+.dash-doc-list { list-style: none; padding: 0; margin: 0 0 20px; display: flex; flex-direction: column; gap: 1px; }
+.dash-doc-row {
+  display: grid;
+  grid-template-columns: 28px 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  transition: background .1s;
+}
+.dash-doc-row:hover { background: var(--ivory-100); }
+.dash-doc-icon {
+  width: 28px; height: 28px; border-radius: 6px;
+  background: var(--ivory-200); color: var(--ink-600);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.dash-doc-icon svg { width: 14px; height: 14px; stroke-width: 1.5; }
+.dash-doc-name { font-size: 13.5px; color: var(--ink-800); }
+.dash-doc-open {
+  font-size: 12px; font-weight: 500; color: var(--blush-500);
+  background: none; border: none; cursor: pointer; padding: 4px 8px;
+  border-radius: 6px; font-family: var(--font-sans);
+  text-decoration: none;
+  transition: background .1s, color .1s;
+  white-space: nowrap;
+}
+.dash-doc-open:hover { background: var(--blush-50); color: var(--blush-600); }
+
+.dash-drive-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font: 500 13.5px/1 var(--font-sans);
+  padding: 10px 16px; border-radius: 8px;
+  background: var(--ink-900); color: var(--ivory-50);
+  border: none; cursor: pointer; text-decoration: none;
+  transition: background .12s, box-shadow .15s;
+}
+.dash-drive-btn:hover { background: var(--ink-800); box-shadow: var(--shadow-sm); }
+.dash-drive-btn svg { width: 16px; height: 16px; stroke-width: 1.5; }
+.dash-drive-hint { font-size: 12px; color: var(--fg-tertiary); margin-left: 14px; }
+
+/* Upsell */
+.dash-upsell {
+  background: var(--ink-900);
+  border-radius: var(--radius-md);
+  padding: 28px 32px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: center;
+  margin-top: 32px;
+}
+.dash-upsell h3 {
+  font-family: var(--font-display);
+  font-size: 24px; font-weight: 400; letter-spacing: -0.015em;
+  color: var(--ivory-50); margin: 6px 0 8px; line-height: 1.2;
+}
+.dash-upsell h3 em { font-style: italic; color: var(--blush-300); }
+.dash-upsell p { font-size: 13.5px; color: var(--clay-200); margin: 0; line-height: 1.5; max-width: 420px; }
+.dash-upsell-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blush-400); }
+.dash-upsell-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  font: 500 14px/1 var(--font-sans);
+  padding: 12px 18px; border-radius: 8px;
+  background: var(--blush-500); color: #fff;
+  border: none; cursor: pointer; text-decoration: none; white-space: nowrap;
+  transition: background .12s, box-shadow .15s;
+}
+.dash-upsell-cta:hover { background: var(--blush-600); box-shadow: var(--shadow-sm); }
+.dash-upsell-cta svg { width: 16px; height: 16px; }
+
+/* Help block */
+.dash-help {
+  background: #fff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+.dash-help-icon { width: 36px; height: 36px; border-radius: 8px; background: var(--ivory-100); color: var(--ink-600); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.dash-help-icon svg { width: 18px; height: 18px; stroke-width: 1.5; }
+.dash-help-text { flex: 1; }
+.dash-help-text strong { font-size: 14px; color: var(--ink-900); display: block; margin-bottom: 2px; }
+.dash-help-text span { font-size: 13px; color: var(--fg-secondary); }
+.dash-help a { font-size: 13px; font-weight: 500; color: var(--blush-500); text-decoration: none; white-space: nowrap; }
+.dash-help a:hover { color: var(--rose-500); }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel">
+
+const PURCHASED = [
+  {
+    id: 1, label: 'Bundle 1', name: 'Coach HR Starter',
+    purchasedOn: 'Apr 18, 2026', price: '$97',
+    docs: [
+      'Coach Onboarding Checklist',
+      'Coach Code of Conduct',
+      'Communication & Chain of Command Guide',
+      'Discipline & Incident Management System',
+      'Incident Report Template',
+      'Written Warning Template',
+      'Youth Safety & Boundaries Guideline',
+      'Organizational Escalation Path',
+      'Implementation Guide',
+    ],
+  },
+];
+
+const UPSELL_BUNDLES = [
+  { id: 2, name: 'Parent & Athlete Conduct', price: '$122' },
+  { id: 3, name: 'Compliance & Incident System', price: '$147' },
+];
+
+function Dashboard() {
+  return (
+    <>
+      <TopNav />
+      <div className="dash-page">
+        <div className="dash-greeting">
+          <h1>Good morning, <em>Jess.</em></h1>
+          <p>Your documents are ready. Download, customize, and you're covered.</p>
+        </div>
+
+        <div className="dash-section-head">
+          <span className="dash-section-title">Your bundles</span>
+        </div>
+
+        {PURCHASED.map(b => <BundleCard key={b.id} {...b} />)}
+
+        <UpsellCard />
+
+        <HelpBlock />
+      </div>
+    </>
+  );
+}
+
+function TopNav() {
+  return (
+    <nav className="dash-nav">
+      <div className="dash-nav-brand">
+        <img src="../../assets/logo/wordmark.svg" height="26" alt="The Whole Game" />
+      </div>
+      <div className="dash-nav-spacer" />
+      <div className="dash-nav-links">
+        <a href="#" className="dash-nav-link active">My documents</a>
+        <a href="#" className="dash-nav-link">Account</a>
+        <a href="../marketing/index.html" className="dash-nav-link">Browse bundles</a>
+      </div>
+      <div className="dash-nav-avatar" title="Jess Rivera">JR</div>
+    </nav>
+  );
+}
+
+function BundleCard({ label, name, purchasedOn, price, docs }) {
+  return (
+    <div className="dash-bundle">
+      <div className="dash-bundle-head">
+        <div>
+          <div className="dash-bundle-label">{label}</div>
+          <div className="dash-bundle-name">{name}</div>
+          <div className="dash-bundle-meta">Purchased {purchasedOn} · {price} · {docs.length} documents</div>
+        </div>
+        <div className="dash-bundle-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          Access active
+        </div>
+      </div>
+      <div className="dash-bundle-body">
+        <ul className="dash-doc-list">
+          {docs.map((d, i) => (
+            <li key={i} className="dash-doc-row">
+              <div className="dash-doc-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
+                  <path d="M14 2v6h6"/>
+                </svg>
+              </div>
+              <span className="dash-doc-name">{d}</span>
+              <a href="#" className="dash-doc-open">Open in Drive →</a>
+            </li>
+          ))}
+        </ul>
+        <div style={{display:'flex', alignItems:'center', paddingTop:4}}>
+          <a href="#" className="dash-drive-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+            </svg>
+            Open full Google Drive folder
+          </a>
+          <span className="dash-drive-hint">Make a copy of each doc to edit it</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function UpsellCard() {
+  return (
+    <div className="dash-upsell">
+      <div>
+        <div className="dash-upsell-eyebrow">Add to your system</div>
+        <h3>Complete your <em>HR foundation.</em></h3>
+        <p>
+          You have the coach HR piece. Parent conduct and compliance documentation are the other two legs.
+          Get all three for the full system — or add them individually.
+        </p>
+        <div style={{display:'flex', gap:10, flexWrap:'wrap', marginTop:16}}>
+          {UPSELL_BUNDLES.map(b => (
+            <a key={b.id} href="../onboarding/index.html" style={{
+              display:'inline-flex', alignItems:'center', gap:6,
+              fontSize:13, fontWeight:500,
+              background:'rgba(255,255,255,0.07)', color:'var(--clay-100)',
+              border:'1px solid rgba(255,255,255,0.1)',
+              padding:'7px 14px', borderRadius:8, textDecoration:'none',
+              transition:'background .12s'
+            }}>
+              {b.name} · {b.price}
+            </a>
+          ))}
+        </div>
+      </div>
+      <a href="../onboarding/index.html" className="dash-upsell-cta">
+        Get the Full Stack · $297
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  );
+}
+
+function HelpBlock() {
+  return (
+    <div className="dash-help">
+      <div className="dash-help-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M21 11.5a8.38 8.38 0 0 1-9 8.5 8.5 8.5 0 0 1-4-1L3 21l1-4a8.5 8.5 0 1 1 17-5.5z"/>
+        </svg>
+      </div>
+      <div className="dash-help-text">
+        <strong>Need help customizing your documents?</strong>
+        <span> Each bundle includes an implementation guide. Still stuck? We're here.</span>
+      </div>
+      <a href="mailto:hello@thewholegame.com">Email us →</a>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<Dashboard />);
+</script>
+</body>
+</html>

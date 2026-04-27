@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { background: var(--bg-canvas); margin: 0; font-family: var(--font-sans); }
+  .card { padding: 28px; display: flex; flex-direction: column; gap: 12px; }
+  .item { display: grid; grid-template-columns: 120px 1fr; align-items: start; gap: 18px; }
+  .lbl { font-family: var(--font-mono); font-size: 10px; color: var(--fg-tertiary); letter-spacing: 0.04em; padding-top: 2px; }
+  .on { font-size: 14px; color: var(--ink-800); max-width: 460px; line-height: 1.45; }
+  .off { font-size: 13px; color: var(--fg-tertiary); text-decoration: line-through; text-decoration-color: var(--rust-300); max-width: 460px; line-height: 1.45; }
+  .on em { font-family: var(--font-display); font-style: italic; color: var(--blush-500); font-weight: 500; }
+</style></head>
+<body>
+<div class="card">
+  <div class="item"><span class="lbl">✓ voice</span><div class="on">"Three families still owe fees. <em>Want me to send a nudge?</em>"</div></div>
+  <div class="item"><span class="lbl">✗ off-brand</span><div class="off">"Leverage our AI-powered platform to empower payment collection workflows."</div></div>
+  <div class="item"><span class="lbl">✓ voice</span><div class="on">"The ref cancelled on Saturday. <em>I pulled three backups.</em>"</div></div>
+  <div class="item"><span class="lbl">✗ off-brand</span><div class="off">"As an AI, I have identified a referee unavailability event. Please select from the options below."</div></div>
+  <div class="item"><span class="lbl">✓ voice</span><div class="on"><em>"Let's simplify registration this season."</em></div></div>
+  <div class="item"><span class="lbl">✗ off-brand</span><div class="off">"🔥 Revolutionize your season with game-changing registration! 🚀"</div></div>
+</div>
+</body></html>

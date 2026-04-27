@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { background: var(--bg-canvas); margin: 0; font-family: var(--font-sans); }
+  .card { padding: 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    font: 500 14px/1 var(--font-sans); letter-spacing: -0.005em;
+    padding: 11px 18px; border-radius: var(--radius-sm);
+    border: 1px solid transparent; cursor: pointer;
+    transition: background var(--duration-fast) var(--ease-out), box-shadow var(--duration-base) var(--ease-out), transform var(--duration-fast) var(--ease-out);
+  }
+  .btn svg { width: 16px; height: 16px; stroke-width: 1.75; }
+  .btn-primary { background: var(--blush-500); color: #fff; }
+  .btn-primary:hover { background: var(--blush-600); box-shadow: var(--shadow-sm); }
+  .btn-secondary { background: #fff; color: var(--ink-800); border-color: var(--border-default); }
+  .btn-secondary:hover { background: var(--ivory-100); border-color: var(--border-strong); }
+  .btn-ghost { background: transparent; color: var(--ink-800); }
+  .btn-ghost:hover { background: var(--ivory-100); }
+  .btn-ink { background: var(--ink-900); color: var(--ivory-50); }
+  .btn-ink:hover { background: var(--ink-800); }
+  .btn-link { background: transparent; color: var(--blush-500); padding: 8px 4px; }
+  .btn-link:hover { color: var(--rose-500); }
+  .btn-sm { padding: 7px 12px; font-size: 13px; }
+  .btn-lg { padding: 14px 22px; font-size: 15px; }
+  .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+</style></head>
+<body>
+<div class="card">
+  <button class="btn btn-primary">Start your season <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
+  <button class="btn btn-secondary">Talk to us</button>
+  <button class="btn btn-ghost">Learn more</button>
+  <button class="btn btn-ink">Book a demo</button>
+  <button class="btn btn-link">See pricing →</button>
+  <button class="btn btn-primary btn-sm">Save</button>
+  <button class="btn btn-primary btn-lg">Get started</button>
+  <button class="btn btn-primary" disabled>Processing…</button>
+</div>
+</body></html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { background: var(--bg-canvas); margin: 0; font-family: var(--font-sans); }
+  .card { padding: 28px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .badge {
+    display: inline-flex; align-items:center; gap: 6px;
+    font-size: 12px; font-weight: 500;
+    padding: 4px 10px; border-radius: var(--radius-full);
+    border: 1px solid transparent;
+  }
+  .badge .dot { width: 6px; height: 6px; border-radius: 50%; }
+  .badge-neutral { background: var(--ivory-200); color: var(--ink-700); border-color: var(--clay-100); }
+  .badge-accent { background: var(--blush-50); color: var(--blush-700); }
+  .badge-success { background: var(--sage-50); color: var(--sage-700); }
+  .badge-warning { background: var(--amber-50); color: var(--amber-600); }
+  .badge-error   { background: var(--rust-50); color: var(--rust-500); }
+  .pill {
+    display:inline-flex; align-items:center; gap: 6px;
+    font-size: 12px; font-weight: 500; padding: 6px 12px;
+    border-radius: var(--radius-full); background: #fff; color: var(--ink-800);
+    border: 1px solid var(--border-default);
+  }
+</style></head>
+<body>
+<div class="card">
+  <span class="badge badge-accent"><span class="dot" style="background:var(--blush-500)"></span>New</span>
+  <span class="badge badge-success"><span class="dot" style="background:var(--sage-500)"></span>Registered</span>
+  <span class="badge badge-warning"><span class="dot" style="background:var(--amber-500)"></span>Pending</span>
+  <span class="badge badge-error"><span class="dot" style="background:var(--rust-500)"></span>Past due</span>
+  <span class="badge badge-neutral">Draft</span>
+  <span class="pill">U12 · Spring 2026</span>
+  <span class="pill">Coaches</span>
+  <span class="pill" style="color:var(--blush-600);border-color:var(--blush-200);background:var(--blush-50)">⚡ AI suggestion</span>
+</div>
+</body></html>

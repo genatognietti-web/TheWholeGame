@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Email preview — The Whole Game waitlist confirmation</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #f0e9e1; font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; padding: 40px 20px; }
+
+  .email-frame { max-width: 600px; margin: 0 auto; }
+  .email-meta { font-size: 11px; color: #8a6a5d; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; margin-bottom: 12px; padding: 0 4px; }
+
+  .email-wrap { background: #fbf1ec; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 24px rgba(45,25,21,0.10); }
+
+  /* Header */
+  .email-header { background: #2e1915; padding: 32px 48px; }
+  .email-header img { height: 28px; }
+
+  /* Hero band */
+  .email-hero { background: #2e1915; padding: 0 48px 40px; }
+  .email-hero h1 { font-family: Georgia, 'Times New Roman', serif; font-size: 36px; font-weight: 400; color: #fbf1ec; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 14px; }
+  .email-hero h1 em { font-style: italic; color: #e4a590; }
+  .email-hero p { font-size: 15px; color: #c89e85; line-height: 1.6; max-width: 480px; }
+
+  /* Body */
+  .email-body { padding: 40px 48px; }
+  .email-greeting { font-size: 16px; color: #2e1915; font-weight: 500; margin-bottom: 16px; }
+  .email-para { font-size: 15px; color: #523129; line-height: 1.65; margin-bottom: 16px; }
+  .email-para strong { color: #2e1915; font-weight: 600; }
+  .email-para a { color: #c66b52; text-decoration: none; }
+
+  /* What to expect */
+  .email-expect { background: #fff; border: 1px solid #ecd7cb; border-radius: 10px; padding: 24px 28px; margin: 28px 0; }
+  .email-expect-title { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8c6249; margin-bottom: 16px; }
+  .email-expect-row { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px; }
+  .email-expect-row:last-child { margin-bottom: 0; }
+  .email-expect-icon { width: 32px; height: 32px; border-radius: 8px; background: #fbeee8; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #c66b52; font-size: 15px; }
+  .email-expect-text strong { display: block; font-size: 14px; color: #2e1915; font-weight: 600; margin-bottom: 2px; }
+  .email-expect-text span { font-size: 13px; color: #85564b; line-height: 1.5; }
+
+  /* Bundles preview */
+  .email-bundles { margin: 28px 0; }
+  .email-bundles-title { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8c6249; margin-bottom: 14px; }
+  .email-bundle-row { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; border-radius: 8px; background: #fff; border: 1px solid #ecd7cb; margin-bottom: 8px; }
+  .email-bundle-row:last-child { margin-bottom: 0; }
+  .email-bundle-name { font-size: 14px; font-weight: 500; color: #2e1915; }
+  .email-bundle-sub { font-size: 12px; color: #85564b; margin-top: 2px; }
+  .email-bundle-price { font-family: Georgia, serif; font-size: 22px; font-weight: 400; color: #c66b52; }
+
+  /* CTA */
+  .email-cta-wrap { text-align: center; margin: 32px 0; }
+  .email-cta {
+    display: inline-block;
+    background: #c66b52; color: #fff !important;
+    font-size: 15px; font-weight: 600;
+    padding: 14px 28px; border-radius: 8px;
+    text-decoration: none; letter-spacing: -0.005em;
+  }
+  .email-cta-sub { font-size: 12px; color: #8c6249; margin-top: 10px; }
+
+  /* Footer */
+  .email-footer { border-top: 1px solid #ecd7cb; padding: 28px 48px; }
+  .email-footer p { font-size: 12px; color: #a9786c; line-height: 1.6; }
+  .email-footer a { color: #c66b52; text-decoration: none; }
+
+  /* Browser preview label */
+  .preview-label { text-align: center; font-size: 12px; color: #a9786c; margin-top: 24px; letter-spacing: 0.06em; }
+</style>
+</head>
+<body>
+<div class="email-frame">
+  <div class="email-meta">Email preview · Waitlist confirmation</div>
+  <div class="email-wrap">
+
+    <!-- Header -->
+    <div class="email-header">
+      <img src="../../assets/logo/wordmark-ondark.svg" alt="The Whole Game" />
+    </div>
+
+    <!-- Hero -->
+    <div class="email-hero">
+      <h1>You're on the list. <em>We've got you.</em></h1>
+      <p>Thanks for joining — you'll be first to know when bundles go live at the end of May.</p>
+    </div>
+
+    <!-- Body -->
+    <div class="email-body">
+      <p class="email-greeting">Hi there,</p>
+      <p class="email-para">
+        You're on the waitlist for <strong>The Whole Game</strong> document bundles — ready-to-use HR and compliance templates built for youth sports organizations.
+      </p>
+      <p class="email-para">
+        We're launching at the <strong>end of May 2026</strong>. As a waitlist member, you'll get an email 24 hours before we open to the public — first access, no scrambling.
+      </p>
+
+      <!-- What to expect -->
+      <div class="email-expect">
+        <div class="email-expect-title">What happens next</div>
+        <div class="email-expect-row">
+          <div class="email-expect-icon">📬</div>
+          <div class="email-expect-text">
+            <strong>Early access email</strong>
+            <span>You'll hear from us 24 hours before launch. One email, no fluff — just the link to get your bundle.</span>
+          </div>
+        </div>
+        <div class="email-expect-row">
+          <div class="email-expect-icon">📄</div>
+          <div class="email-expect-text">
+            <strong>Instant download</strong>
+            <span>After purchase, you'll get a Google Drive link with all 9 documents. Make a copy, add your org's details, done.</span>
+          </div>
+        </div>
+        <div class="email-expect-row">
+          <div class="email-expect-icon">✅</div>
+          <div class="email-expect-text">
+            <strong>One-time purchase, you own it</strong>
+            <span>No subscription, no renewal. Buy once, customize forever.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bundle preview -->
+      <div class="email-bundles">
+        <div class="email-bundles-title">The bundles launching in May</div>
+        <div class="email-bundle-row">
+          <div>
+            <div class="email-bundle-name">Coach HR Starter</div>
+            <div class="email-bundle-sub">9 documents · onboarding, conduct, incidents</div>
+          </div>
+          <div class="email-bundle-price">$97</div>
+        </div>
+        <div class="email-bundle-row">
+          <div>
+            <div class="email-bundle-name">Parent & Athlete Conduct</div>
+            <div class="email-bundle-sub">9 documents · expectations, behavior, resolution</div>
+          </div>
+          <div class="email-bundle-price">$122</div>
+        </div>
+        <div class="email-bundle-row">
+          <div>
+            <div class="email-bundle-name">Compliance & Incident System</div>
+            <div class="email-bundle-sub">9 documents · framework, reporting, liability</div>
+          </div>
+          <div class="email-bundle-price">$147</div>
+        </div>
+        <div class="email-bundle-row" style="background:#2e1915; border-color:#523129;">
+          <div>
+            <div class="email-bundle-name" style="color:#fbf1ec;">The Full Stack — all three bundles</div>
+            <div class="email-bundle-sub" style="color:#c89e85;">27 documents · save $69</div>
+          </div>
+          <div class="email-bundle-price" style="color:#e4a590;">$297</div>
+        </div>
+      </div>
+
+      <p class="email-para">
+        Questions before launch? Just reply to this email. We actually read them.
+      </p>
+      <p class="email-para" style="font-family: Georgia, serif; font-size: 17px; font-style: italic; color: #6a4238; line-height: 1.4;">
+        "Turn chaos into culture. One decision at a time."
+      </p>
+      <p class="email-para" style="margin-top: 24px;">
+        — The Whole Game team
+      </p>
+    </div>
+
+    <!-- Footer -->
+    <div class="email-footer">
+      <p>
+        You're receiving this because you joined the waitlist at <a href="#">thewholegame.com</a>.<br>
+        <a href="#">Unsubscribe</a> · <a href="#">Privacy policy</a> · hello@thewholegame.com
+      </p>
+    </div>
+
+  </div>
+  <p class="preview-label">Design preview only — not a real sent email</p>
+</div>
+</body>
+</html>

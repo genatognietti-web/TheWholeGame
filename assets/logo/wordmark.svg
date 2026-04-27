@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 72" width="400" height="72">
+  <defs>
+    
+  </defs>
+
+  
+  <g transform="translate(10, 7)">
+    
+    <circle cx="26" cy="10" r="5" fill="#2e1915"></circle>
+
+    
+    <g stroke="#2e1915" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      
+      <line x1="26" y1="15" x2="26" y2="32"></line>
+      
+      <path d="M 26 21 L 14 17"></path>
+      
+      <path d="M 26 21 L 38 26"></path>
+      
+      <path d="M 26 32 L 20 50"></path>
+      
+      <path d="M 26 32 L 32 50"></path>
+    </g>
+
+    
+    <g stroke="#c66b52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      
+      <path d="M 5 14 L 13 14 Q 16 14 16 17 Q 16 20 13 20 L 5 20 Q 2 20 2 17 Q 2 14 5 14 Z"></path>
+      
+      <line x1="16" y1="17" x2="19.5" y2="17"></line>
+    </g>
+    
+    <circle cx="9" cy="17" r="1.5" fill="#c66b52"></circle>
+  </g>
+
+  
+  <text x="68" y="31" class="wm-serif" font-size="24" fill="#2e1915" letter-spacing="-0.01em">The Whole Game</text>
+  <text x="68" y="52" class="wm-sans" font-size="10" fill="#8c6249" letter-spacing="0.18em">YOUTH SPORTS OPS</text>
+</svg>
