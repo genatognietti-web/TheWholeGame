@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — The Whole Game</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink-900: #2e1915; --ink-800: #3d231d; --ink-700: #523129; --ink-600: #6a4238;
+  --ink-500: #85564b; --ink-400: #a9786c; --ink-300: #cfa093;
+  --ivory-50: #fdf6f1; --ivory-100: #faece4; --ivory-200: #f5ddd0;
+  --clay-100: #ecd7cb; --clay-200: #debdaa; --clay-300: #c89e85;
+  --blush-50: #fbeee8; --blush-200: #eec3b2; --blush-300: #e4a590;
+  --blush-400: #d7866c; --blush-500: #c66b52; --blush-600: #a8523d;
+  --rose-500: #95493a;
+  --border-subtle: #ecd7cb; --border-default: #debdaa;
+  --fg-body: #3d231d; --fg-secondary: #6a4238; --fg-tertiary: #85564b;
+  --bg-canvas: #fdf6f1;
+  --font-display: 'Newsreader', Georgia, serif;
+  --font-sans: 'Geist', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --nav-height: 72px; --container-max: 1200px;
+  --shadow-sm: 0 1px 2px rgba(45,30,25,.06), 0 1px 3px rgba(45,30,25,.04);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-family: var(--font-sans); font-size: 16px; color: var(--fg-body); background: var(--bg-canvas); -webkit-font-smoothing: antialiased; }
+body { overflow-x: hidden; }
+a { color: var(--blush-500); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; transition: color .12s; }
+a:hover { color: var(--rose-500); }
+
+.twg-nav { position: sticky; top: 0; z-index: 50; background: transparent; transition: background .18s, backdrop-filter .18s, border-color .18s; border-bottom: 1px solid transparent; }
+.twg-nav.scrolled { background: color-mix(in oklab, var(--ivory-50) 82%, transparent); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom-color: var(--border-subtle); }
+.twg-nav-inner { display: flex; align-items: center; justify-content: space-between; height: var(--nav-height); max-width: var(--container-max); margin: 0 auto; padding: 0 28px; }
+.twg-nav-brand { text-decoration: none; }
+.twg-nav-brand span { font-family: var(--font-display); font-size: 20px; font-weight: 400; letter-spacing: -.01em; color: var(--ink-900); }
+.twg-nav-links { display: flex; gap: 28px; }
+.twg-nav-links a { font-size: 14px; font-weight: 500; color: var(--ink-800); text-decoration: none; }
+.twg-nav-links a:hover { color: var(--blush-500); }
+.twg-nav-cta { display: flex; gap: 10px; }
+.twg-btn { display: inline-flex; align-items: center; gap: 8px; font: 500 14px/1 var(--font-sans); padding: 11px 18px; border-radius: 6px; border: 1px solid transparent; cursor: pointer; text-decoration: none; transition: background .12s, box-shadow .18s; }
+.twg-btn-sm { padding: 7px 14px; font-size: 13px; }
+.twg-btn-primary { background: var(--blush-500); color: #fff; }
+.twg-btn-primary:hover { background: var(--blush-600); box-shadow: var(--shadow-sm); }
+.twg-btn-ghost { background: transparent; color: var(--ink-800); }
+.twg-btn-ghost:hover { color: var(--blush-500); }
+.twg-container { max-width: var(--container-max); margin: 0 auto; padding: 0 28px; }
+
+.legal-hero { background: var(--ivory-100); border-bottom: 1px solid var(--border-subtle); padding: 64px 0 52px; }
+.legal-hero-inner { max-width: 760px; }
+.legal-eyebrow { font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--blush-500); margin-bottom: 14px; display: block; }
+.legal-hero h1 { font-family: var(--font-display); font-size: clamp(32px, 5vw, 48px); font-weight: 400; letter-spacing: -.02em; color: var(--ink-900); margin-bottom: 12px; }
+.legal-meta { font-size: 13.5px; color: var(--fg-tertiary); line-height: 1.6; }
+.legal-meta a { color: var(--blush-500); }
+
+.legal-layout { display: grid; grid-template-columns: 220px 1fr; gap: 64px; padding: 64px 0 96px; align-items: start; }
+.legal-toc { position: sticky; top: calc(var(--nav-height) + 24px); }
+.legal-toc h5 { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--fg-tertiary); margin-bottom: 14px; }
+.legal-toc ol { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+.legal-toc a { font-size: 13px; color: var(--fg-secondary); text-decoration: none; padding: 5px 10px; border-radius: 4px; display: block; transition: background .12s, color .12s; line-height: 1.4; }
+.legal-toc a:hover { background: var(--blush-50); color: var(--blush-500); }
+
+.legal-body { min-width: 0; }
+.legal-section { margin-bottom: 48px; padding-bottom: 48px; border-bottom: 1px solid var(--border-subtle); }
+.legal-section:last-child { border-bottom: none; }
+.legal-section h2 { font-family: var(--font-display); font-size: 22px; font-weight: 400; letter-spacing: -.01em; color: var(--ink-900); margin-bottom: 16px; }
+.legal-section p { font-size: 15px; color: var(--fg-body); line-height: 1.8; margin-bottom: 12px; }
+.legal-section ul { padding-left: 20px; margin-bottom: 12px; }
+.legal-section li { font-size: 15px; color: var(--fg-body); line-height: 1.75; margin-bottom: 8px; }
+.legal-section strong { color: var(--ink-800); font-weight: 600; }
+
+.legal-contact { background: var(--ivory-100); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 28px 32px; margin-top: 48px; }
+.legal-contact p { font-size: 15px; color: var(--fg-body); margin-bottom: 6px; }
+.legal-contact p:last-child { margin-bottom: 0; }
+
+.twg-footer { background: var(--ivory-100); border-top: 1px solid var(--border-subtle); padding: 64px 0 0; }
+.twg-footer-inner { display: grid; grid-template-columns: 1.4fr 2fr; gap: 48px; padding-bottom: 56px; }
+.twg-footer-brand p { font-size: 14px; color: var(--fg-secondary); margin-top: 14px; max-width: 320px; line-height: 1.5; }
+.twg-footer-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; }
+.twg-footer-cols h5 { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .14em; color: var(--ink-900); margin: 0 0 14px; }
+.twg-footer-cols a { display: block; font-size: 14px; color: var(--fg-secondary); text-decoration: none; padding: 4px 0; }
+.twg-footer-cols a:hover { color: var(--blush-500); }
+.twg-footer-bottom { border-top: 1px solid var(--border-subtle); padding: 20px 0; font-size: 12.5px; color: var(--fg-tertiary); }
+.twg-footer-bottom .twg-container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+
+@media (max-width: 768px) {
+  .twg-nav-links { display: none; }
+  .twg-nav-cta .twg-btn-ghost { display: none; }
+  .twg-nav-inner { padding: 0 16px; }
+  .twg-container { padding: 0 16px; }
+  .legal-layout { grid-template-columns: 1fr; gap: 40px; padding: 48px 0 72px; }
+  .legal-toc { display: none; }
+  .twg-footer-inner { grid-template-columns: 1fr; gap: 32px; }
+  .twg-footer-cols { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .twg-footer-cols { grid-template-columns: 1fr; }
+  .twg-footer-bottom .twg-container { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<nav class="twg-nav" id="nav">
+  <div class="twg-nav-inner">
+    <a href="/" class="twg-nav-brand"><span>The Whole Game</span></a>
+    <div class="twg-nav-links">
+      <a href="/#how-it-works">Product</a>
+      <a href="/#bundles-pricing">Pricing</a>
+      <a href="/about.html">About</a>
+    </div>
+    <div class="twg-nav-cta">
+      <a href="#" class="twg-btn twg-btn-ghost twg-btn-sm">Sign in</a>
+      <a href="/#hero-waitlist" class="twg-btn twg-btn-primary twg-btn-sm">Join the waitlist</a>
+    </div>
+  </div>
+</nav>
+
+<div class="legal-hero">
+  <div class="twg-container legal-hero-inner">
+    <span class="legal-eyebrow">Legal</span>
+    <h1>Privacy Policy</h1>
+    <p class="legal-meta">
+      Effective Date: April 28, 2026 &nbsp;·&nbsp; The Whole Game, LLC &nbsp;·&nbsp; Spring Hill, TN<br>
+      Questions? <a href="mailto:hello@thewholegame.com">hello@thewholegame.com</a>
+    </p>
+  </div>
+</div>
+
+<div class="twg-container">
+  <div class="legal-layout">
+
+    <aside class="legal-toc">
+      <h5>Contents</h5>
+      <ol>
+        <li><a href="#s1">Overview</a></li>
+        <li><a href="#s2">Information We Collect</a></li>
+        <li><a href="#s3">How We Use It</a></li>
+        <li><a href="#s4">Email & Mailchimp</a></li>
+        <li><a href="#s5">How We Share It</a></li>
+        <li><a href="#s6">Data Retention</a></li>
+        <li><a href="#s7">Cookies</a></li>
+        <li><a href="#s8">Children's Privacy</a></li>
+        <li><a href="#s9">Your Rights</a></li>
+        <li><a href="#s10">Security</a></li>
+        <li><a href="#s11">Changes</a></li>
+        <li><a href="#s12">Governing Law</a></li>
+      </ol>
+    </aside>
+
+    <div class="legal-body">
+
+      <div class="legal-section" id="s1">
+        <h2>1. Overview</h2>
+        <p>The Whole Game, LLC ("we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and protect your personal information when you visit thewholegame.com (the "Site") or purchase our Products.</p>
+      </div>
+
+      <div class="legal-section" id="s2">
+        <h2>2. Information We Collect</h2>
+        <p>We may collect the following types of information:</p>
+        <ul>
+          <li><strong>Information you provide directly:</strong> Name, email address, and any other information you submit when joining our waitlist, making a purchase, or contacting us.</li>
+          <li><strong>Purchase information:</strong> Transaction data processed through our payment provider (Stripe). We do not store full credit card numbers on our servers.</li>
+          <li><strong>Usage data:</strong> Standard website analytics including pages visited, time on site, and browser/device information, collected through tools such as Google Analytics.</li>
+        </ul>
+      </div>
+
+      <div class="legal-section" id="s3">
+        <h2>3. How We Use Your Information</h2>
+        <p>We use the information we collect to:</p>
+        <ul>
+          <li>Process and fulfill your purchases and deliver your digital products</li>
+          <li>Send order confirmations and product access information</li>
+          <li>Send waitlist confirmation emails and launch announcements</li>
+          <li>Send occasional marketing emails about new products or updates (you may unsubscribe at any time)</li>
+          <li>Improve the Site and our products</li>
+          <li>Respond to your inquiries and provide customer support</li>
+        </ul>
+      </div>
+
+      <div class="legal-section" id="s4">
+        <h2>4. Email Marketing & Mailchimp</h2>
+        <p>We use Mailchimp to manage our email list and send communications. When you join our waitlist or make a purchase, your email address may be added to our Mailchimp list. Mailchimp's privacy practices are governed by their own privacy policy, available at mailchimp.com. You may unsubscribe from our emails at any time using the link included in every email.</p>
+      </div>
+
+      <div class="legal-section" id="s5">
+        <h2>5. How We Share Your Information</h2>
+        <p>We do not sell your personal information. We may share your information with trusted third-party service providers who assist us in operating the Site and delivering our Products, including:</p>
+        <ul>
+          <li>Stripe (payment processing)</li>
+          <li>Mailchimp (email communications)</li>
+          <li>Microsoft OneDrive (product delivery)</li>
+          <li>Website hosting and analytics providers</li>
+        </ul>
+        <p>These providers are contractually obligated to protect your information and may only use it as directed by us.</p>
+      </div>
+
+      <div class="legal-section" id="s6">
+        <h2>6. Data Retention</h2>
+        <p>We retain your personal information for as long as necessary to fulfill the purposes outlined in this policy, to comply with legal obligations, and to resolve disputes. You may request deletion of your personal data at any time by contacting us.</p>
+      </div>
+
+      <div class="legal-section" id="s7">
+        <h2>7. Cookies</h2>
+        <p>Our Site may use cookies and similar tracking technologies to improve your browsing experience and analyze Site traffic. You can control cookie settings through your browser preferences. Disabling cookies may affect certain functionality of the Site.</p>
+      </div>
+
+      <div class="legal-section" id="s8">
+        <h2>8. Children's Privacy</h2>
+        <p>This Site is intended for use by adults and organizations. We do not knowingly collect personal information from individuals under the age of 13. If you believe we have inadvertently collected such information, please contact us immediately.</p>
+      </div>
+
+      <div class="legal-section" id="s9">
+        <h2>9. Your Rights</h2>
+        <p>You have the right to access, correct, or request deletion of any personal information we hold about you. To exercise these rights, please contact us at the information below. We will respond within a reasonable timeframe.</p>
+      </div>
+
+      <div class="legal-section" id="s10">
+        <h2>10. Security</h2>
+        <p>We take reasonable technical and organizational measures to protect your personal information from unauthorized access, disclosure, or misuse. However, no method of data transmission over the internet is 100% secure, and we cannot guarantee absolute security.</p>
+      </div>
+
+      <div class="legal-section" id="s11">
+        <h2>11. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. Changes will be effective upon posting to the Site. We encourage you to review this policy periodically.</p>
+      </div>
+
+      <div class="legal-section" id="s12">
+        <h2>12. Governing Law</h2>
+        <p>This Privacy Policy is governed by the laws of the State of Tennessee.</p>
+      </div>
+
+      <div class="legal-contact">
+        <p><strong>Privacy questions or data requests?</strong></p>
+        <p>The Whole Game, LLC · Spring Hill, TN</p>
+        <p><a href="mailto:hello@thewholegame.com">hello@thewholegame.com</a></p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer class="twg-footer">
+  <div class="twg-container twg-footer-inner">
+    <div class="twg-footer-brand">
+      <span style="font-family:var(--font-display);font-size:22px;font-weight:400;letter-spacing:-.01em;color:var(--ink-900)">The Whole Game</span>
+      <p>The operations layer for youth sports. Less logistics. More game.</p>
+    </div>
+    <div class="twg-footer-cols">
+      <div>
+        <h5>Product</h5>
+        <a href="/#bundles-pricing">Coach HR Starter</a>
+        <a href="/#bundles-pricing">Parent &amp; Athlete Conduct</a>
+        <a href="/#bundles-pricing">Compliance &amp; Incident System</a>
+        <a href="/#bundles-pricing">Full Stack Bundle</a>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <a href="/about.html">About</a>
+        <a href="mailto:hello@thewholegame.com">Contact</a>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+  <div class="twg-footer-bottom">
+    <div class="twg-container">
+      <span>© 2026 The Whole Game, LLC</span>
+      <span>Built for the people holding it all together.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20));
+</script>
+</body>
+</html>
